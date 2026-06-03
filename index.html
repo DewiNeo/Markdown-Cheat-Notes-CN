@@ -698,38 +698,39 @@ ___
 <p>可以使用 <code>:::className</code> 语法来为图表中的特定节点绑定自定义样式（样式需提前使用 <code>classDef</code> 定义）。</p>
 <p>示例：</p>
 <ol>
-<li>
-<p>基础流程图 (Flowchart TD)</p>
-<pre><code class="language-mermaid"><div class="mermaid">graph TD
-    A[开始] --> B{判断}
-    B -->|条件1| C[处理1]
-    B -->|条件2| D[处理2]
-    C --> E[结束]
-    D --> E
+<li>基础流程图 (Flowchart TD)<pre class="hljs"><code><div>```mermaid
+graph TD
+    A[开始] --&gt; B{判断}
+    B --&gt;|条件1| C[处理1]
+    B --&gt;|条件2| D[处理2]
+    C --&gt; E[结束]
+    D --&gt; E
 </div></code></pre>
+<pre class="hljs"><code><div></div></code></pre>
 </li>
-<li>
-<p>带有子图和自定义样式的流程图 (Subgraph &amp; Custom Styling)</p>
-<pre><code class="language-mermaid"><div class="mermaid">graph TD
+<li>带有子图和自定义样式的流程图 (Subgraph &amp; Custom Styling)<pre class="hljs"><code><div>```mermaid
+graph TD
     %% 1. 自定义样式定义
     classDef user fill:#0288d1,stroke:#01579b,stroke-width:2px,color:#ffffff;
     classDef system fill:#4e342e,stroke:#2d1510,stroke-width:2px,color:#ffffff;
 
     %% 2. 子图结构
     subgraph Pengguna [买家活动]
-        A[开始：去购物车结算]:::user --> B[选择支付方式]:::user
+        A[开始：去购物车结算]:::user --&gt; B[选择支付方式]:::user
     end
 
     subgraph Internal [电商内部系统]
-        B --> C[更新订单状态]:::system
+        B --&gt; C[更新订单状态]:::system
     end
 </div></code></pre>
+<pre class="hljs"><code><div></div></code></pre>
 </li>
 </ol>
 <blockquote>
 <p>⚠️ 注意：<br>
 编写图表语法时，节点名称（如 A、B、C）后的括号类型决定了节点的形状。<code>[]</code> 表示矩形，<code>{}</code> 表示菱形（条件判断），<code>(())</code> 表示圆形。</p>
 </blockquote>
+<p>示例显示：</p>
 <pre><code class="language-mermaid"><div class="mermaid">graph TD
     A[开始] --> B{判断}
     B -->|条件1| C[处理1]
