@@ -12,3 +12,17 @@ h3{
     box-sizing: border-box;
 }
 
+img[alt*="#small"] {
+    width: 200px;
+    height: auto;
+}
+
+img[alt*="#medium"] {
+    width: 450px;
+    height: auto;
+}
+
+img[alt*="#large"] {
+    width: 800px;
+    height: auto;
+}

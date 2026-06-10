@@ -1,371 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>index.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&ast;&ast;&#x6211;&#x7684; Markdown &#x5bc6;&#x8bb0; &#x1f92b;&ast;&ast;</title>
+            <style>
+/* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
 }
 
 </style>
-
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
 <style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
 }
 
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
 }
 </style>
-
 <style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
 }
 
 </style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
 
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-</head>
-<body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<link rel="stylesheet" href="./style.css">
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<link rel="stylesheet" href="./style.css">
 <h1 id="我的-markdown-密记-"><strong>我的 Markdown 密记 🤫</strong></h1>
 <p>Markdown 借助名类符号和语法来设置文本格式，做出你想要效果。它通常会被渲染为 HTML 格式，你也可以根据需求，将 Markdown 文件导出为 PDF 等其他格式。</p>
 <p>制作 Markdown 文档，首先需要一些工具。为了更方便使用，我推荐使用 Visual Studio Code。下面是下载链接：<a href="https://code.visualstudio.com/">快点我!</a></p>
@@ -501,17 +275,17 @@ code {
 <h2 id="代码块">代码块</h2>
 <p>用法和行内代码类似，区别是使用三个反引号 <code>`</code>，也可以输入四个空格。<br>
 示例：</p>
-<pre class="hljs"><code><div>大家好,
+<pre><code>大家好,
    我是代码块, 您可以使用我编写代码
-</div></code></pre>
+</code></pre>
 <p>代码块可以标准编程语言，还会自动区分代码颜色。</p>
-<pre class="hljs"><code><div>   ```js &lt;- JavaScript / 程序语言
+<pre><code>   ```js &lt;- JavaScript / 程序语言
     // 这里编写代码
     ``` 
-</div></code></pre>
+</code></pre>
 <p>Javascript 代码示例：</p>
-<pre class="hljs"><code><div>   <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>
-</div></code></pre>
+<pre><code class="language-js">   <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>
+</code></pre>
 <h2 id="超链接">超链接</h2>
 <p>先用方括号 <code>[]</code> 放入显示文字，再用圆括号放入网址，就能创建，也支持相对链接</p>
 <p>部分 Markdown 格式里，直接粘贴网址会自动转为链接，也可以使用<code>&lt;&gt;</code> 包裹网址生成链接。</p>
@@ -533,17 +307,40 @@ code {
 </tr>
 <tr>
 <td>直接粘贴网址</td>
-<td>https://www.markdownguide.org/</td>
+<td><a href="https://www.markdownguide.org/">https://www.markdownguide.org/</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="图片">图片</h2>
 <p>插入图片的格式和超链接基本一致，同样使用方括号和圆括号。区别是要在方括号前面加上 <code>!</code>。也可以使用 HTML 的 <img> 标签，它更加灵活，因为它可以让你控制图片的大小和样式。
 示例</p>
-<pre class="hljs"><code><div>    ![图片名](图片地址)
+<pre><code>    ![图片名](图片地址)
     或
     &lt;img src=&quot;图片地址&quot; width=&quot;用来设置图片宽度&quot; style=&quot;用来添加各种格式&quot;&gt;
-</div></code></pre>
+
+    当要设置图片宽度那必须要使用CSS来实现。例如：  
+    文件名称：style.css
+    文件内容：    
+    img[alt*=&quot;#small&quot;] {
+        width: 200px;
+        height: auto;
+    }
+
+    img[alt*=&quot;#medium&quot;] {
+        width: 450px;
+        height: auto;
+    }
+
+    img[alt*=&quot;#large&quot;] {
+        width: 800px;
+        height: auto;
+    }
+
+    Markdown 语法：
+    ![图片名 #'small/medium/large'](图片地址)
+
+    #small 是一个属性值/attribute value，这需要和开发人员确认属性值的细节才决定在产品信息需要用的属性值。也可以不使用属性值，但例如照片宽度，还有其他格式设置，使用Markdown 是设置不了。
+</code></pre>
 <p><img src="https://cdn.commonmark.org/uploads/default/original/2X/3/366f3614de6996d79a131fdf9b41ed7d65cfe181.png" alt="Markdown Logo"></p>
 <img src="https://cdn.commonmark.org/uploads/default/original/2X/3/366f3614de6996d79a131fdf9b41ed7d65cfe181.png" width="200">
 <h2 id="引用文本">引用文本</h2>
@@ -574,12 +371,12 @@ ___
 有序列表：在每一项前加上数字和英文句号 <code>.</code>，数字顺序不影响最终显示效果。</p>
 <p>符号或数字后面必须空一格。
 还可以制作嵌套列表，用四个空格或制表键缩进即可。</p>
-<p>使用 * 制作无序列表</p>
+<p>使用 <code>*</code> 制作无序列表</p>
 <ul>
 <li>无序列表项 1</li>
 <li>无序列表项 2</li>
 </ul>
-<p>使用 数字. 制作有序列表</p>
+<p>使用 <code>数字.</code> 制作有序列表</p>
 <ol>
 <li>
 <p>有序列表项 1</p>
@@ -681,9 +478,9 @@ ___
 <li><code>- [x]</code> 代表已勾选的复选框</li>
 </ul>
 <p>示例</p>
-<ul>
-<li><input type="checkbox" id="checkbox0"><label for="checkbox0">未勾选 <code>- [ ]</code></label></li>
-<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">已勾选 <code>- [x]</code></label></li>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> 未勾选 <code>- [ ]</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> 已勾选 <code>- [x]</code></li>
 </ul>
 <h2 id="图表">图表</h2>
 <p>Markdown 支持使用 Mermaid 语法来直接绘制各种图表（如流程图、时序图、甘特图等），无需嵌套任何外部图片。</p>
@@ -698,32 +495,32 @@ ___
 <p>可以使用 <code>:::className</code> 语法来为图表中的特定节点绑定自定义样式（样式需提前使用 <code>classDef</code> 定义）。</p>
 <p>示例：</p>
 <ol>
-<li>基础流程图 (Flowchart TD)<pre class="hljs"><code><div>```mermaid
-graph TD
-    A[开始] --&gt; B{判断}
-    B --&gt;|条件1| C[处理1]
-    B --&gt;|条件2| D[处理2]
-    C --&gt; E[结束]
-    D --&gt; E
-</div></code></pre>
-<pre class="hljs"><code><div></div></code></pre>
+<li>基础流程图 (Flowchart TD)<pre><code>    ```mermaid
+    graph TD
+        A[开始] --&gt; B{判断}
+        B --&gt;|条件1| C[处理1]
+        B --&gt;|条件2| D[处理2]
+        C --&gt; E[结束]
+        D --&gt; E
+    ```
+</code></pre>
 </li>
-<li>带有子图和自定义样式的流程图 (Subgraph &amp; Custom Styling)<pre class="hljs"><code><div>```mermaid
-graph TD
-    %% 1. 自定义样式定义
-    classDef user fill:#0288d1,stroke:#01579b,stroke-width:2px,color:#ffffff;
-    classDef system fill:#4e342e,stroke:#2d1510,stroke-width:2px,color:#ffffff;
+<li>带有子图和自定义样式的流程图 (Subgraph &amp; Custom Styling)<pre><code>    ```mermaid
+    graph TD
+        %% 1. 自定义样式定义
+        classDef user fill:#0288d1,stroke:#01579b,stroke-width:2px,color:#ffffff;
+        classDef system fill:#4e342e,stroke:#2d1510,stroke-width:2px,color:#ffffff;
 
-    %% 2. 子图结构
-    subgraph Pengguna [买家活动]
-        A[开始：去购物车结算]:::user --&gt; B[选择支付方式]:::user
-    end
+        %% 2. 子图结构
+        subgraph Pengguna [买家活动]
+            A[开始：去购物车结算]:::user --&gt; B[选择支付方式]:::user
+        end
 
-    subgraph Internal [电商内部系统]
-        B --&gt; C[更新订单状态]:::system
-    end
-</div></code></pre>
-<pre class="hljs"><code><div></div></code></pre>
+        subgraph Internal [电商内部系统]
+            B --&gt; C[更新订单状态]:::system
+        end
+    ```
+</code></pre>
 </li>
 </ol>
 <blockquote>
@@ -731,14 +528,13 @@ graph TD
 编写图表语法时，节点名称（如 A、B、C）后的括号类型决定了节点的形状。<code>[]</code> 表示矩形，<code>{}</code> 表示菱形（条件判断），<code>(())</code> 表示圆形。</p>
 </blockquote>
 <p>示例显示：</p>
-<pre><code class="language-mermaid"><div class="mermaid">graph TD
-    A[开始] --> B{判断}
-    B -->|条件1| C[处理1]
-    B -->|条件2| D[处理2]
-    C --> E[结束]
-    D --> E
-</div></code></pre>
-<pre><code class="language-mermaid"><div class="mermaid">graph TD
+<pre class="mermaid" style="all: unset;">graph TD
+    A[开始] --&gt; B{判断}
+    B --&gt;|条件1| C[处理1]
+    B --&gt;|条件2| D[处理2]
+    C --&gt; E[结束]
+    D --&gt; E</pre>
+<pre class="mermaid" style="all: unset;">graph TD
     %% 自定义颜色和样式
     classDef user fill:#0288d1,stroke:#01579b,stroke-width:2px,color:#ffffff;
     classDef system fill:#4e342e,stroke:#2d1510,stroke-width:2px,color:#ffffff;
@@ -747,51 +543,50 @@ graph TD
 
     %% 第1部分：用户活动
     subgraph Pengguna [买家活动]
-        A[开始：去购物车结算]:::user --> B[选择支付方式]:::user
-        B --> C{哪种支付方式？}:::user
+        A[开始：去购物车结算]:::user --&gt; B[选择支付方式]:::user
+        B --&gt; C{哪种支付方式？}:::user
     end
 
     %% 第2部分：支付系统
     subgraph Gateway [支付网关系统]
-        C -- 银行转账 / 虚拟账户 --> D[系统生成虚拟账户号]:::gateway
-        C -- 电子钱包 / QRIS --> E[系统生成付款二维码]:::gateway
+        C -- 银行转账 / 虚拟账户 --&gt; D[系统生成虚拟账户号]:::gateway
+        C -- 电子钱包 / QRIS --&gt; E[系统生成付款二维码]:::gateway
         
-        D --> F{用户在24小时内付款？}:::gateway
-        E --> F
+        D --&gt; F{用户在24小时内付款？}:::gateway
+        E --&gt; F
         
-        F -- 否 --> G[交易自动取消]:::gateway
-        F -- 是 --> H[支付成功确认]:::gateway
+        F -- 否 --&gt; G[交易自动取消]:::gateway
+        F -- 是 --&gt; H[支付成功确认]:::gateway
     end
 
     %% 第3部分：电商内部系统
     subgraph Internal [电商内部系统]
-        H --> I[更新订单状态：已付款]:::system
-        I --> J[发送通知给买家和卖家]:::system
+        H --&gt; I[更新订单状态：已付款]:::system
+        I --&gt; J[发送通知给买家和卖家]:::system
     end
 
     %% 第4部分：仓库与物流
     subgraph Logistik [仓储与物流]
-        J --> K[仓库开始配货与打包]:::warehouse
-        K --> L[系统呼叫快递/上门取件]:::warehouse
-        L --> M[快递员取件并开始配送]:::warehouse
+        J --&gt; K[仓库开始配货与打包]:::warehouse
+        K --&gt; L[系统呼叫快递/上门取件]:::warehouse
+        L --&gt; M[快递员取件并开始配送]:::warehouse
     end
 
     %% 流程结束
-    M --> N{买家是否收到商品？}:::user
-    N -- 是且无误 --> O[点击确认收货 / 款项打给卖家]:::user --> P((结束))
-    N -- 否 / 商品损坏 --> Q[申请退款 / 退货]:::user --> P
-</div></code></pre>
+    M --&gt; N{买家是否收到商品？}:::user
+    N -- 是且无误 --&gt; O[点击确认收货 / 款项打给卖家]:::user --&gt; P((结束))
+    N -- 否 / 商品损坏 --&gt; Q[申请退款 / 退货]:::user --&gt; P</pre>
 <h1 id="特殊标题">特殊标题</h1>
 <p>可以使用符号也可以 HTML 代码。</p>
 <p>HTML 代码示例：</p>
-<pre class="hljs"><code><div>&lt;div style=&quot;background-color: #e8edfa; padding: 16px 20px; border-radius: 6px; font-family: sans-serif; margin-top: 15px; margin-bottom: 20px;&quot;&gt;
+<pre><code>&lt;div style=&quot;background-color: #e8edfa; padding: 16px 20px; border-radius: 6px; font-family: sans-serif; margin-top: 15px; margin-bottom: 20px;&quot;&gt;
     &lt;span style=&quot;font-size: 1.1em;&quot;&gt;🔗&lt;/span&gt; &lt;strong style=&quot;color: #1a1a1a; font-size: 1.1em;&quot;&gt;配套服务&lt;/strong&gt;&lt;span style=&quot;color: #4a4a4a; font-size: 0.95em;&quot;&gt;/Supporting service&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;div style=&quot;background-color: #e8edfa; padding: 16px 20px; border-radius: 6px; font-family: sans-serif;&quot;&gt;
     &lt;strong style=&quot;color: #1a1a1a; font-size: 1.1em; font-weight: 900;&quot;&gt;基础信息&lt;/strong&gt;&lt;span style=&quot;color: #4a4a4a; font-size: 0.95em;&quot;&gt; / Basic information&lt;/span&gt;
 &lt;/div&gt;
-</div></code></pre>
+</code></pre>
 <p>会显示</p>
 <div style="background-color: #e8edfa; padding: 16px 20px; border-radius: 6px; font-family: sans-serif; margin-top: 15px; margin-bottom: 20px;">
     <span style="font-size: 1.1em;">🔗</span> <strong style="color: #1a1a1a; font-size: 1.1em;">配套服务</strong><span style="color: #4a4a4a; font-size: 0.95em;">/Supporting service</span>
@@ -800,7 +595,7 @@ graph TD
     <strong style="color: #1a1a1a; font-size: 1.1em; font-weight: 900;">基础信息</strong><span style="color: #4a4a4a; font-size: 0.95em;"> / Basic information</span>
 </div>
 <p>符号示例：</p>
-<pre class="hljs"><code><div>### **基础信息** / Basic Information
+<pre><code>### **基础信息** / Basic Information
 
 ### **基础信息** / &lt;small&gt;Basic information&lt;/small&gt;
 
@@ -819,10 +614,12 @@ h3{
 }
 在markdown文件里（就是 文件名.md）需要加上 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;./style.css&quot;&gt;
-</div></code></pre>
+</code></pre>
 <p>会显示</p>
 <h3 id="基础信息--basic-information"><strong>基础信息</strong> / Basic Information</h3>
 <h3 id="基础信息--basic-information-1"><strong>基础信息</strong> / <small>Basic information</small></h3>
 
-</body>
-</html>
+            
+            
+        </body>
+        </html>
